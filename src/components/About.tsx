@@ -1,62 +1,77 @@
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-secondary">
+    <section id="about" className="section-padding bg-gradient-warm">
       <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground fade-in">
-            About ProFlow Services
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-primary fade-in">
+            Anadolu Tesisat Ustası
           </h2>
-          <div className="w-24 h-1 bg-gradient-accent mx-auto mb-8"></div>
+          <div className="w-32 h-1.5 bg-gradient-accent mx-auto mb-10 rounded-full"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="fade-in">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">
-              15+ Years of Excellence
+            <h3 className="text-3xl font-serif font-semibold mb-6 text-primary">
+              İstanbul'da 15+ Yıllık Deneyim
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              With over 15 years of experience in the plumbing and renovation industry, 
-              ProFlow Services has built a reputation for delivering exceptional quality 
-              and professional service. Our team of certified professionals is dedicated 
-              to providing reliable solutions that stand the test of time.
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              İstanbul genelinde 15 yılı aşkın süredir tesisat, döşeme ve renovasyon alanında 
+              hizmet veren Anadolu Tesisat Ustası olarak, kaliteli işçilik ve müşteri memnuniyeti 
+              odaklı yaklaşımımızla sektörde öncü konumdayız.
             </p>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              From emergency plumbing repairs to complete bathroom renovations, we handle 
-              every project with meticulous attention to detail and a commitment to 
-              customer satisfaction.
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Acil tesisat tamirlerinden komple banyo renovasyonlarına, her projeyi 
+              titizlikle ele alıyor ve zamanında teslim ediyoruz. Lisanslı ekibimiz ve 
+              kaliteli malzemelerimizle uzun ömürlü çözümler sunuyoruz.
             </p>
             
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-3 gap-8 mb-10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">1000+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
+                <div className="text-4xl font-bold text-accent mb-3">500+</div>
+                <div className="text-sm text-muted-foreground font-medium">Tamamlanan Proje</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Emergency Service</div>
+                <div className="text-4xl font-bold text-accent mb-3">24/7</div>
+                <div className="text-sm text-muted-foreground font-medium">Acil Servis</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-accent mb-3">15+</div>
+                <div className="text-sm text-muted-foreground font-medium">Yıl Deneyim</div>
               </div>
             </div>
           </div>
           
-          <div className="fade-in" style={{animationDelay: '0.3s'}}>
-            <div className="bg-card rounded-xl p-8 shadow-medium">
-              <h4 className="text-xl font-semibold mb-4 text-primary">Why Choose Us?</h4>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Licensed & Insured Professionals</span>
+          <div className="slide-in-left" style={{animationDelay: '0.4s'}}>
+            <div className="bg-card rounded-3xl p-10 shadow-warm">
+              <h4 className="text-2xl font-serif font-semibold mb-6 text-primary">Neden Bizi Seçmelisiniz?</h4>
+              <ul className="space-y-5">
+                <li className="flex items-start">
+                  <div className="w-3 h-3 bg-accent rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-semibold text-foreground mb-1">Lisanslı ve Sigortalı Ekip</div>
+                    <div className="text-muted-foreground text-sm">Profesyonel sertifikalara sahip uzman ekip</div>
+                  </div>
                 </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Quality Materials & Workmanship</span>
+                <li className="flex items-start">
+                  <div className="w-3 h-3 bg-accent rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-semibold text-foreground mb-1">Kaliteli Malzeme Garantisi</div>
+                    <div className="text-muted-foreground text-sm">Sadece A+ kalite malzemeler kullanıyoruz</div>
+                  </div>
                 </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Transparent Pricing & Free Quotes</span>
+                <li className="flex items-start">
+                  <div className="w-3 h-3 bg-accent rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-semibold text-foreground mb-1">Şeffaf Fiyatlandırma</div>
+                    <div className="text-muted-foreground text-sm">Ücretsiz keşif ve net fiyat garantisi</div>
+                  </div>
                 </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Customer Satisfaction Guarantee</span>
+                <li className="flex items-start">
+                  <div className="w-3 h-3 bg-accent rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-semibold text-foreground mb-1">İş Garantisi</div>
+                    <div className="text-muted-foreground text-sm">Tüm işlerimizde 2 yıl garanti</div>
+                  </div>
                 </li>
               </ul>
             </div>

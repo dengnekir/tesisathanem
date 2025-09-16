@@ -8,7 +8,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -16,10 +16,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { href: "#about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "#gallery", label: "Gallery" },
-    { href: "#contact", label: "Contact" },
+    { href: "#about", label: "Hakkımızda" },
+    { href: "#services", label: "Hizmetlerimiz" },
+    { href: "#gallery", label: "Projelerimiz" },
+    { href: "#contact", label: "İletişim" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -31,47 +31,46 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-background/95 backdrop-blur-sm shadow-medium" : "bg-transparent"
-    }`}>
+    <nav className={`${isScrolled ? 'nav-sticky' : 'fixed top-0 left-0 right-0 z-40'} transition-all duration-500`}>
       <div className="container-max">
-        <div className="flex items-center justify-between h-16 px-4">
+        <div className="flex items-center justify-between h-20 px-6">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className={`text-2xl font-bold transition-colors duration-300 ${
+            <h1 className={`text-2xl font-serif font-bold transition-colors duration-500 ${
               isScrolled ? "text-primary" : "text-white"
             }`}>
-              ProFlow Services
+              Anadolu Tesisat Ustası
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`font-medium transition-colors duration-300 hover:text-accent ${
-                  isScrolled ? "text-foreground" : "text-white/90"
+                className={`font-medium transition-all duration-500 hover:text-accent relative group ${
+                  isScrolled ? "text-foreground" : "text-white/95"
                 }`}
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
             <Button 
-              className={`${isScrolled ? "btn-primary" : "border-white/30 text-white hover:bg-white/10"} transition-all duration-300`}
+              className={`${isScrolled ? "btn-primary" : "border-white/40 text-white hover:bg-white/15 backdrop-blur-sm"} transition-all duration-500`}
               variant={isScrolled ? "default" : "outline"}
-              onClick={() => window.open("tel:+15551234567", "_self")}
+              onClick={() => window.open("tel:+905551234567", "_self")}
             >
               <Phone className="w-4 h-4 mr-2" />
-              Call Now
+              Hemen Ara
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors duration-300 ${
+            className={`md:hidden p-2 transition-colors duration-500 ${
               isScrolled ? "text-foreground" : "text-white"
             }`}
           >
@@ -81,24 +80,24 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border">
-            <div className="py-4 space-y-4">
+          <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border/50">
+            <div className="py-6 space-y-6">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-foreground hover:text-accent transition-colors duration-300"
+                  className="block w-full text-left px-6 py-3 text-foreground hover:text-accent transition-colors duration-300 font-medium text-lg"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="px-4">
+              <div className="px-6">
                 <Button 
-                  className="btn-primary w-full"
-                  onClick={() => window.open("tel:+15551234567", "_self")}
+                  className="btn-primary w-full text-lg py-4"
+                  onClick={() => window.open("tel:+905551234567", "_self")}
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Now
+                  <Phone className="w-5 h-5 mr-2" />
+                  Hemen Ara
                 </Button>
               </div>
             </div>

@@ -6,13 +6,14 @@ import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 const Index = () => {
   useEffect(() => {
     // Animation on scroll observer
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -100px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -24,7 +25,7 @@ const Index = () => {
     }, observerOptions);
 
     // Observe all fade-in elements
-    const fadeElements = document.querySelectorAll(".fade-in");
+    const fadeElements = document.querySelectorAll(".fade-in, .slide-in-left");
     fadeElements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -41,6 +42,7 @@ const Index = () => {
       <Gallery />
       <Contact />
       <Footer />
+      <FloatingContact />
     </div>
   );
 };

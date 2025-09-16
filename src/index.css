@@ -2,32 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional Plumbing Services Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Anadolu Tesisat Ustası - Warm Professional Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 210 22% 15%;
+    --background: 40 20% 97%;
+    --foreground: 30 15% 15%;
 
-    /* Professional Blue Theme */
-    --primary: 214 84% 36%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 214 100% 45%;
-    --primary-dark: 214 84% 28%;
+    /* Warm Brown/Beige Primary Theme */
+    --primary: 25 30% 35%;
+    --primary-foreground: 40 20% 97%;
+    --primary-light: 25 35% 45%;
+    --primary-dark: 25 25% 25%;
 
-    /* Warm Orange Accent */
-    --accent: 24 95% 58%;
+    /* Copper/Teal Accent */
+    --accent: 174 40% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 24 95% 65%;
-    --accent-dark: 24 95% 50%;
+    --accent-light: 174 45% 55%;
+    --accent-dark: 174 35% 35%;
 
-    /* Professional Grays */
-    --secondary: 210 16% 96%;
-    --secondary-foreground: 210 22% 15%;
-    --muted: 210 16% 93%;
-    --muted-foreground: 210 12% 45%;
+    /* Warm Neutrals */
+    --secondary: 40 25% 92%;
+    --secondary-foreground: 30 15% 15%;
+    --muted: 40 20% 88%;
+    --muted-foreground: 30 10% 45%;
 
     /* UI Elements */
     --card: 0 0% 100%;
@@ -44,16 +44,18 @@
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
-    /* Design System Enhancements */
+    /* Warm Design System Enhancements */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent-dark)), hsl(var(--accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--primary-dark) / 0.9));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.85), hsl(var(--primary-dark) / 0.9));
+    --gradient-warm: linear-gradient(45deg, hsl(30 40% 85%), hsl(40 35% 90%));
     
-    --shadow-soft: 0 2px 8px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 4px 16px hsl(var(--primary) / 0.15);
-    --shadow-strong: 0 8px 32px hsl(var(--primary) / 0.2);
+    --shadow-soft: 0 2px 12px hsl(25 25% 25% / 0.08);
+    --shadow-medium: 0 8px 25px hsl(25 25% 25% / 0.12);
+    --shadow-strong: 0 16px 40px hsl(25 25% 25% / 0.16);
+    --shadow-warm: 0 4px 20px hsl(25 30% 35% / 0.15);
     
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -117,56 +119,92 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans leading-relaxed;
+    letter-spacing: 0.01em;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
 }
 
 @layer components {
-  /* Professional Button Variants */
+  /* Warm Professional Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-accent-dark to-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105;
+    @apply bg-gradient-to-r from-accent-dark to-accent text-accent-foreground px-10 py-5 rounded-xl font-semibold text-lg shadow-medium hover:shadow-strong transition-all duration-500 hover:scale-105 hover:-translate-y-1;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-6 py-3 rounded-lg font-medium shadow-soft hover:shadow-medium transition-all duration-300;
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-8 py-4 rounded-xl font-medium shadow-soft hover:shadow-warm transition-all duration-500 hover:scale-102;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground border border-border px-6 py-3 rounded-lg font-medium hover:bg-muted transition-all duration-300;
+    @apply bg-secondary text-secondary-foreground border border-border px-8 py-4 rounded-xl font-medium hover:bg-muted hover:shadow-soft transition-all duration-500;
   }
 
-  /* Section Layouts */
+  /* Enhanced Section Layouts */
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-28 px-6 sm:px-8 lg:px-12;
   }
 
   .container-max {
     @apply max-w-7xl mx-auto;
   }
 
-  /* Animation Classes */
+  /* Enhanced Animation Classes */
   .fade-in {
-    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
   }
 
   .fade-in.visible {
     @apply opacity-100 translate-y-0;
   }
 
-  .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-2;
+  .slide-in-left {
+    @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
   }
 
-  /* Professional Card Styling */
+  .slide-in-left.visible {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-500 hover:-translate-y-3 hover:shadow-strong;
+  }
+
+  .scale-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-warm;
+  }
+
+  /* Enhanced Card Styling */
   .service-card {
-    @apply bg-card rounded-xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 border border-border hover-lift;
+    @apply bg-card rounded-2xl p-10 shadow-soft hover:shadow-warm transition-all duration-500 border border-border/50 scale-hover backdrop-blur-sm;
   }
 
   .project-card {
-    @apply bg-card rounded-lg overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 hover-lift;
+    @apply bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-strong transition-all duration-500 hover-lift cursor-pointer;
+  }
+
+  /* Floating Elements */
+  .floating-btn {
+    @apply fixed bottom-6 right-6 z-50 bg-gradient-to-r from-accent-dark to-accent text-accent-foreground p-4 rounded-full shadow-strong hover:shadow-medium transition-all duration-500 hover:scale-110;
+  }
+
+  /* Sticky Navigation */
+  .nav-sticky {
+    @apply fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md shadow-medium transition-all duration-500;
+  }
+
+  /* Lightbox Styles */
+  .lightbox-overlay {
+    @apply fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+  }
+
+  .lightbox-content {
+    @apply relative max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden shadow-strong;
   }
 }
