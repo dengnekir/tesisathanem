@@ -71,6 +71,7 @@ export default {
         'gradient-accent': 'var(--gradient-accent)',
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-warm': 'var(--gradient-warm)',
+        'gradient-video': 'var(--gradient-video)',
       },
       scale: {
         '102': '1.02',
