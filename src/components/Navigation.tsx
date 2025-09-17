@@ -18,7 +18,6 @@ const Navigation = () => {
   const navItems = [
     { href: "#about", label: "Hakkımızda" },
     { href: "#services", label: "Hizmetlerimiz" },
-    { href: "#gallery", label: "Projelerimiz" },
     { href: "#contact", label: "İletişim" },
   ];
 

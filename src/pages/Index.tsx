@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import VideoShowcase from "@/components/VideoShowcase";
-import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
@@ -14,7 +13,7 @@ const Index = () => {
     // Animation on scroll observer
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -100px 0px"
+      rootMargin: "0px 0px -100px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -41,7 +40,6 @@ const Index = () => {
       <About />
       <Services />
       <VideoShowcase />
-      <Gallery />
       <Contact />
       <Footer />
       <FloatingContact />
