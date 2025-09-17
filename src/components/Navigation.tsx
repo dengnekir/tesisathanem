@@ -31,15 +31,21 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`${isScrolled ? 'nav-sticky' : 'fixed top-0 left-0 right-0 z-40'} transition-all duration-500`}>
+    <nav
+      className={`${
+        isScrolled ? "nav-sticky" : "fixed top-0 left-0 right-0 z-40"
+      } transition-all duration-500`}
+    >
       <div className="container-max">
         <div className="flex items-center justify-between h-20 px-6">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className={`text-2xl font-serif font-bold transition-colors duration-500 ${
-              isScrolled ? "text-primary" : "text-white"
-            }`}>
-              Anadolu Tesisat Ustası
+            <h1
+              className={`text-2xl font-serif font-bold transition-colors duration-500 ${
+                isScrolled ? "text-primary" : "text-white"
+              }`}
+            >
+              Fayans, Tesisat ve Dekorasyon Ercan Gökçur
             </h1>
           </div>
 
@@ -57,10 +63,14 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Button 
-              className={`${isScrolled ? "btn-primary" : "border-white/40 text-white hover:bg-white/15 backdrop-blur-sm"} transition-all duration-500`}
+            <Button
+              className={`${
+                isScrolled
+                  ? "btn-primary"
+                  : "border-primary/40 text-primary hover:bg-primary/10 hover:text-primary-dark backdrop-blur-sm"
+              } transition-all duration-500`}
               variant={isScrolled ? "default" : "outline"}
-              onClick={() => window.open("tel:+905551234567", "_self")}
+              onClick={() => window.open("tel:+905354703826", "_self")}
             >
               <Phone className="w-4 h-4 mr-2" />
               Hemen Ara
@@ -74,7 +84,11 @@ const Navigation = () => {
               isScrolled ? "text-foreground" : "text-white"
             }`}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -92,9 +106,9 @@ const Navigation = () => {
                 </button>
               ))}
               <div className="px-6">
-                <Button 
+                <Button
                   className="btn-primary w-full text-lg py-4"
-                  onClick={() => window.open("tel:+905551234567", "_self")}
+                  onClick={() => window.open("tel:+905354703826", "_self")}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Hemen Ara
