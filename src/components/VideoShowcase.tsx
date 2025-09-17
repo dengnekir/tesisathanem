@@ -9,30 +9,21 @@ const VideoShowcase = () => {
   const videos = [
     {
       id: 1,
-      title: "Banyo Renovasyonu - Çalışma Sürecim",
-      description: "Modern banyo tasarımından kuruluma kadar tüm süreç",
+      title: "Mutfak Yenilenmesi - Profesyonel Uygulama",
+      description: "Modern mutfak tasarımından kuruluma kadar tüm süreç",
       thumbnail:
-        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      videoUrl: "/src/components/video1.mp4", // Local video
       duration: "2:45",
     },
     {
       id: 2,
-      title: "Mutfak Döşemesi - Profesyonel Uygulama",
-      description: "Seramik döşeme tekniklerim ve detay işçiliği",
+      title: "Fayans Döşeme - Detay İşçiliği",
+      description: "Profesyonel fayans döşeme tekniklerim ve kaliteli işçilik",
       thumbnail:
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
+        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      videoUrl: "/src/components/video2.mp4", // Local video
       duration: "3:20",
-    },
-    {
-      id: 3,
-      title: "Dekorasyon ve Tadilat - İç Mekan Düzenlemesi",
-      description: "Modern dekorasyon çözümleri ve iç mekan tasarımı",
-      thumbnail:
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
-      duration: "1:55",
     },
   ];
 
@@ -101,7 +92,7 @@ const VideoShowcase = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {videos.map((video, index) => (
             <div
               key={video.id}
