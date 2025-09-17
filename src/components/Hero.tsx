@@ -10,6 +10,13 @@ const Hero = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -52,8 +59,12 @@ const Hero = () => {
           className="fade-in flex flex-col sm:flex-row gap-6 justify-center"
           style={{ animationDelay: "0.9s" }}
         >
-          <Button className="btn-hero text-xl py-6 px-12" size="lg">
-            Ücretsiz Keşif
+          <Button 
+            className="btn-hero text-xl py-6 px-12" 
+            size="lg"
+            onClick={scrollToContact}
+          >
+            İletişime Geç
           </Button>
           <Button
             variant="outline"

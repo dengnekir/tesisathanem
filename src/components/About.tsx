@@ -84,7 +84,7 @@ const About = () => {
                       Şeffaf Fiyatlandırma
                     </div>
                     <div className="text-muted-foreground text-sm">
-                      Ücretsiz keşif ve net fiyat garantisi
+                      Net fiyat garantisi ve şeffaf maliyetlendirme
                     </div>
                   </div>
                 </li>
