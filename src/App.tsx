@@ -8,12 +8,19 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Use dynamic basename so dev preview (/) works and production uses /tesisathanem/
+const base =
+  typeof window !== "undefined" &&
+  window.location?.pathname?.startsWith("/tesisathanem/")
+    ? "/tesisathanem/"
+    : "/";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/tesisathanem/">
+      <BrowserRouter basename={base}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
