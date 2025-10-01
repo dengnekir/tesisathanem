@@ -193,12 +193,12 @@ const Contact = () => {
         </div>
 
         {/* Service Areas */}
-        <div className="mt-20 fade-in" style={{ animationDelay: "0.6s" }}>
-          <div className="bg-secondary rounded-2xl sm:rounded-3xl p-6 sm:p-10">
+        {/* <div className="mt-20 fade-in" style={{ animationDelay: "0.6s" }}>
+          <div className="bg-secondary rounded-2xl p-10">
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary text-center">
               İstanbul Genelinde Hizmet Verdiğimiz İlçeler
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4 text-xs sm:text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
               {istanbulDistricts.map((district) => (
                 <div
                   key={district}
@@ -209,7 +209,7 @@ const Contact = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

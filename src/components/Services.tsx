@@ -115,18 +115,12 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-4 sm:mt-8 pt-4 sm:pt-6 border-t border-border/50">
-                <button className="text-accent font-semibold hover:text-accent-dark transition-colors duration-300">
-                  Detaylı Bilgi →
-                </button>
-              </div>
             </div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div
+        {/* <div
           className="text-center mt-10 sm:mt-20 fade-in"
           style={{ animationDelay: "0.8s" }}
         >
@@ -144,7 +138,7 @@ const Services = () => {
               Acil Arama: (0535) 470-3826
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* Image Lightbox */}
         {lightboxImage && (
