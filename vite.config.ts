@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
-  base: "/tesisat/", // <<< kesinlikle bu satır olmalı
+  base: "/tesisathanem/", // <<< kesinlikle bu satır olmalı
   plugins: [react(), componentTagger()].filter(Boolean),
   resolve: {
     alias: {
