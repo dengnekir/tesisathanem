@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
   base: "/tesisathanem/", // <<< kesinlikle bu satır olmalı
+  server: {
+    port: 8080,
+  },
   plugins: [react(), componentTagger()].filter(Boolean),
   resolve: {
     alias: {
