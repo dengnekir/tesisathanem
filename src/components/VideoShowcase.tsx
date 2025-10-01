@@ -5,6 +5,8 @@ import video2 from "./video2.mp4";
 
 const VideoShowcase = () => {
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [modalVideoId, setModalVideoId] = useState<number | null>(null);
 
   const videos = [
     {
@@ -24,7 +26,8 @@ const VideoShowcase = () => {
   const handlePlayPause = (videoId: number) => {
     const videoElement = document.getElementById(
       `video-${videoId}`
-    ) as HTMLVideoElement;
+    ) as HTMLVideoElement | null;
+    if (!videoElement) return;
 
     if (playingVideo === videoId) {
       videoElement.pause();
@@ -35,7 +38,7 @@ const VideoShowcase = () => {
         if (v.id !== videoId) {
           const otherVideo = document.getElementById(
             `video-${v.id}`
-          ) as HTMLVideoElement;
+          ) as HTMLVideoElement | null;
           if (otherVideo) otherVideo.pause();
         }
       });
@@ -45,8 +48,42 @@ const VideoShowcase = () => {
     }
   };
 
+  const openVideoModal = (videoId: number) => {
+    videos.forEach((v) => {
+      const el = document.getElementById(
+        `video-${v.id}`
+      ) as HTMLVideoElement | null;
+      if (el) el.pause();
+    });
+    setPlayingVideo(null);
+    setModalVideoId(videoId);
+    setIsModalOpen(true);
+    setTimeout(() => {
+      const modalVideo = document.getElementById(
+        `modal-video-${videoId}`
+      ) as HTMLVideoElement | null;
+      if (modalVideo) {
+        modalVideo.play().catch(() => {});
+      }
+    }, 0);
+  };
+
+  const closeVideoModal = () => {
+    if (modalVideoId !== null) {
+      const modalVideo = document.getElementById(
+        `modal-video-${modalVideoId}`
+      ) as HTMLVideoElement | null;
+      if (modalVideo) modalVideo.pause();
+    }
+    setIsModalOpen(false);
+    setModalVideoId(null);
+  };
+
   return (
-    <section id="videos" className="section-padding bg-gradient-to-b from-background to-secondary/10">
+    <section
+      id="videos"
+      className="section-padding bg-gradient-to-b from-background to-secondary/10"
+    >
       <div className="container-max">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-serif">
@@ -79,19 +116,13 @@ const VideoShowcase = () => {
                 {/* Play/Pause Overlay */}
                 <div
                   className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer transition-opacity duration-300 hover:bg-black/40"
-                  onClick={() => handlePlayPause(video.id)}
+                  onClick={() => openVideoModal(video.id)}
                 >
                   <button
                     className="bg-primary/90 hover:bg-primary text-white rounded-full p-6 transition-transform duration-300 hover:scale-110 shadow-2xl"
-                    aria-label={
-                      playingVideo === video.id ? "Duraklat" : "Oynat"
-                    }
+                    aria-label={"Büyüt ve Oynat"}
                   >
-                    {playingVideo === video.id ? (
-                      <Pause className="w-8 h-8" />
-                    ) : (
-                      <Play className="w-8 h-8" />
-                    )}
+                    <Play className="w-8 h-8" />
                   </button>
                 </div>
               </div>
@@ -105,6 +136,38 @@ const VideoShowcase = () => {
             </div>
           ))}
         </div>
+        {isModalOpen && modalVideoId !== null && (
+          <div
+            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+            onClick={closeVideoModal}
+          >
+            <div
+              className="bg-black rounded-2xl overflow-hidden shadow-strong w-full max-w-3xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative">
+                <video
+                  id={`modal-video-${modalVideoId}`}
+                  className="w-full h-auto max-h-[80vh] object-contain bg-black"
+                  controls
+                  playsInline
+                >
+                  <source
+                    src={videos.find((v) => v.id === modalVideoId)?.src}
+                    type="video/mp4"
+                  />
+                  Tarayıcınız video etiketini desteklemiyor.
+                </video>
+                <button
+                  onClick={closeVideoModal}
+                  className="absolute top-3 right-3 text-white/90 bg-white/10 hover:bg-white/20 rounded-full px-3 py-1 text-sm"
+                >
+                  Kapat
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
