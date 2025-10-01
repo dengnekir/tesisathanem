@@ -56,22 +56,25 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-background">
+    <section
+      id="contact"
+      className="section-padding bg-background px-2 sm:px-4 md:px-8"
+    >
       <div className="container-max">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-primary fade-in">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 sm:mb-8 text-primary fade-in">
             İletişim
           </h2>
           <div className="w-32 h-1.5 bg-gradient-accent mx-auto mb-10 rounded-full"></div>
           <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto fade-in leading-relaxed"
+            className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto fade-in leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             İstanbul genelinde hizmet veriyoruz. Hemen iletişime geçin
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-0 sm:px-4">
           {/* Contact Information */}
           <div className="fade-in">
             <div className="bg-gradient-primary text-primary-foreground rounded-3xl p-10 shadow-strong mb-10">
@@ -79,7 +82,7 @@ const Contact = () => {
                 İletişim Bilgileri
               </h3>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 <div
                   className="flex items-center cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={handlePhoneClick}
@@ -170,17 +173,17 @@ const Contact = () => {
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto mb-8 sm:mb-16">
               <Button
                 onClick={handlePhoneClick}
-                className="btn-primary h-16 text-lg font-semibold"
+                className="btn-primary h-12 sm:h-16 text-base sm:text-lg font-semibold"
               >
                 <Phone className="w-6 h-6 mr-3" />
                 Hemen Ara
               </Button>
               <Button
                 onClick={handleWhatsAppClick}
-                className="btn-hero h-16 text-lg font-semibold bg-green-600 hover:bg-green-700"
+                className="btn-hero h-12 sm:h-16 text-base sm:text-lg font-semibold bg-green-600 hover:bg-green-700"
               >
                 <MessageCircle className="w-6 h-6 mr-3" />
                 WhatsApp
@@ -191,11 +194,11 @@ const Contact = () => {
 
         {/* Service Areas */}
         <div className="mt-20 fade-in" style={{ animationDelay: "0.6s" }}>
-          <div className="bg-secondary rounded-3xl p-10">
+          <div className="bg-secondary rounded-2xl sm:rounded-3xl p-6 sm:p-10">
             <h3 className="text-2xl font-serif font-semibold mb-6 text-primary text-center">
               İstanbul Genelinde Hizmet Verdiğimiz İlçeler
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4 text-xs sm:text-sm">
               {istanbulDistricts.map((district) => (
                 <div
                   key={district}

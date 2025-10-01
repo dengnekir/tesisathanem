@@ -29,14 +29,14 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container-max section-padding">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+      <div className="container-max section-padding px-2 sm:px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 mb-8 md:mb-16">
           {/* Company Info */}
           <div>
-            <h3 className="text-3xl font-serif font-bold mb-6">
+            <h3 className="text-xl sm:text-3xl font-serif font-bold mb-4 sm:mb-6">
               Fayans, Tesisat ve Dekorasyon Ercan Gökçur
             </h3>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-primary-foreground/80 mb-4 sm:mb-6 leading-relaxed">
               İstanbul genelinde 25+ yıllık deneyimimizle tesisat, döşeme ve
               renovasyon hizmetlerinde kaliteli işçilik garantisi sunuyoruz.
             </p>
@@ -54,10 +54,10 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-xl font-serif font-semibold mb-6">
+            <h4 className="text-lg sm:text-xl font-serif font-semibold mb-4 sm:mb-6">
               Hizmetlerimiz
             </h4>
-            <ul className="space-y-3 text-primary-foreground/80 text-sm">
+            <ul className="space-y-2 sm:space-y-3 text-primary-foreground/80 text-xs sm:text-sm">
               {services.map((service) => (
                 <li
                   key={service}
@@ -71,8 +71,10 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-serif font-semibold mb-6">İletişim</h4>
-            <div className="space-y-4 text-primary-foreground/80 text-sm">
+            <h4 className="text-lg sm:text-xl font-serif font-semibold mb-4 sm:mb-6">
+              İletişim
+            </h4>
+            <div className="space-y-2 sm:space-y-4 text-primary-foreground/80 text-xs sm:text-sm">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-3 text-accent flex-shrink-0" />
                 <span>(0535) 470-3826</span>
@@ -101,10 +103,10 @@ const Footer = () => {
 
           {/* Service Areas */}
           <div>
-            <h4 className="text-xl font-serif font-semibold mb-6">
+            <h4 className="text-lg sm:text-xl font-serif font-semibold mb-4 sm:mb-6">
               Hizmet Alanlarımız
             </h4>
-            <div className="grid grid-cols-2 gap-2 text-xs text-primary-foreground/70">
+            <div className="grid grid-cols-2 gap-1 sm:gap-2 text-xs text-primary-foreground/70">
               {districts.map((district) => (
                 <div
                   key={district}
@@ -120,8 +122,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center">
-          <div className="flex flex-col md:flex-row justify-between items-center text-primary-foreground/60 text-sm">
+        <div className="border-t border-primary-foreground/20 pt-4 md:pt-8 text-center">
+          <div className="flex flex-col md:flex-row justify-between items-center text-primary-foreground/60 text-xs sm:text-sm">
             <p>
               © 2024 Fayans, Tesisat ve Dekorasyon Ercan Gökçur. Tüm hakları
               saklıdır. | Lisanslı ve Sigortalı

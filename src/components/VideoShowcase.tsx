@@ -77,22 +77,25 @@ const VideoShowcase = () => {
   };
 
   return (
-    <section id="videos" className="section-padding bg-background">
+    <section
+      id="videos"
+      className="section-padding bg-background px-2 sm:px-4 md:px-8"
+    >
       <div className="container-max">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-primary fade-in">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 sm:mb-8 text-primary fade-in">
             İşbaşında
           </h2>
           <div className="w-32 h-1.5 bg-gradient-accent mx-auto mb-10 rounded-full"></div>
           <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto fade-in leading-relaxed"
+            className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto fade-in leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             İstanbul genelindeki projelerimizde çalışma sürecimizi izleyin
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {videos.map((video, index) => (
             <div
               key={video.id}
@@ -165,10 +168,10 @@ const VideoShowcase = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-serif font-semibold mb-3 text-primary group-hover:text-accent transition-colors duration-500">
+                <h3 className="text-base sm:text-xl font-serif font-semibold mb-2 sm:mb-3 text-primary group-hover:text-accent transition-colors duration-500">
                   {video.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {video.description}
                 </p>
               </div>
@@ -181,7 +184,7 @@ const VideoShowcase = () => {
           className="text-center mt-20 fade-in"
           style={{ animationDelay: "0.8s" }}
         >
-          <div className="bg-gradient-warm text-primary-foreground rounded-3xl p-12 shadow-strong">
+          <div className="bg-gradient-warm text-primary-foreground rounded-2xl sm:rounded-3xl p-6 sm:p-12 shadow-strong">
             <h3 className="text-3xl font-serif font-bold mb-4">
               Projelerinizi Gerçekleştirmeye Hazırım
             </h3>
@@ -189,7 +192,7 @@ const VideoShowcase = () => {
               25 yıllık deneyimimle İstanbul genelinde kaliteli ve güvenilir
               hizmet sunuyorum
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
               <button
                 onClick={() => window.open("tel:+905354703826", "_self")}
                 className="btn-hero bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30"

@@ -36,11 +36,11 @@ const Navigation = () => {
       } transition-all duration-500`}
     >
       <div className="container-max">
-        <div className="flex items-center justify-between h-20 px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20 px-2 sm:px-6">
           {/* Logo */}
           <div className="flex items-center">
             <h1
-              className={`text-2xl font-serif font-bold transition-colors duration-500 ${
+              className={`text-lg sm:text-2xl font-serif font-bold transition-colors duration-500 ${
                 isScrolled ? "text-primary" : "text-white"
               }`}
             >
@@ -49,7 +49,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-4 md:space-x-10">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -79,7 +79,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors duration-500 ${
+            className={`md:hidden p-2 sm:p-3 transition-colors duration-500 ${
               isScrolled ? "text-foreground" : "text-white"
             }`}
           >
@@ -93,7 +93,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border/50">
+          <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border/50 px-2 sm:px-0">
             <div className="py-6 space-y-6">
               {navItems.map((item) => (
                 <button

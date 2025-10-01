@@ -61,15 +61,18 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-background">
+    <section
+      id="services"
+      className="section-padding bg-background px-2 sm:px-4 md:px-8"
+    >
       <div className="container-max">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-primary fade-in">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 sm:mb-8 text-primary fade-in">
             Hizmetlerimiz
           </h2>
           <div className="w-32 h-1.5 bg-gradient-accent mx-auto mb-10 rounded-full"></div>
           <p
-            className="text-xl text-muted-foreground max-w-3xl mx-auto fade-in leading-relaxed"
+            className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto fade-in leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             İstanbul genelinde profesyonel ekibimiz ve kaliteli malzemelerimizle
@@ -77,7 +80,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -96,15 +99,15 @@ const Services = () => {
                 />
               </div>
 
-              <h3 className="text-2xl font-serif font-semibold mb-6 text-primary group-hover:text-accent transition-colors duration-500">
+              <h3 className="text-lg sm:text-2xl font-serif font-semibold mb-4 sm:mb-6 text-primary group-hover:text-accent transition-colors duration-500">
                 {service.title}
               </h3>
 
-              <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-8 leading-relaxed">
                 {service.description}
               </p>
 
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center text-base">
                     <div className="w-2 h-2 bg-accent rounded-full mr-4 flex-shrink-0"></div>
@@ -113,7 +116,7 @@ const Services = () => {
                 ))}
               </ul>
 
-              <div className="mt-8 pt-6 border-t border-border/50">
+              <div className="mt-4 sm:mt-8 pt-4 sm:pt-6 border-t border-border/50">
                 <button className="text-accent font-semibold hover:text-accent-dark transition-colors duration-300">
                   Detaylı Bilgi →
                 </button>
@@ -124,10 +127,10 @@ const Services = () => {
 
         {/* CTA Section */}
         <div
-          className="text-center mt-20 fade-in"
+          className="text-center mt-10 sm:mt-20 fade-in"
           style={{ animationDelay: "0.8s" }}
         >
-          <div className="bg-gradient-primary text-primary-foreground rounded-3xl p-12 shadow-strong">
+          <div className="bg-gradient-primary text-primary-foreground rounded-2xl sm:rounded-3xl p-6 sm:p-12 shadow-strong">
             <h3 className="text-3xl font-serif font-bold mb-4">
               Acil Durum mu?
             </h3>

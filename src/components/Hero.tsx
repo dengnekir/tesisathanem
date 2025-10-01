@@ -18,13 +18,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-4 md:px-8">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Fayans, Tesisat ve Dekorasyon Ercan Gökçur - Profesyonel hizmetler"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-hero"></div>
@@ -34,21 +34,21 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
+      <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-2 sm:px-6 md:px-10">
         <div className="fade-in">
-          <h1 className="text-6xl md:text-8xl font-serif font-bold mb-8 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-serif font-bold mb-6 sm:mb-8 tracking-tight leading-tight sm:leading-tight">
             Fayans, Tesisat ve Dekorasyon Ercan Gökçur
           </h1>
         </div>
 
         <div className="fade-in" style={{ animationDelay: "0.3s" }}>
-          <p className="text-2xl md:text-3xl mb-6 opacity-95 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 sm:mb-6 opacity-95 font-medium">
             İstanbul'da Profesyonel Tesisat, Döşeme ve Renovasyon
           </p>
         </div>
 
         <div className="fade-in" style={{ animationDelay: "0.6s" }}>
-          <p className="text-lg mb-12 opacity-85 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 opacity-85 max-w-3xl mx-auto leading-relaxed">
             25+ yıllık deneyimimizle İstanbul genelinde kaliteli işçilik ve
             güvenilir hizmet. Tesisat tamiri, banyo renovasyonu ve döşeme işleri
             için tek adresiniz.
@@ -56,11 +56,11 @@ const Hero = () => {
         </div>
 
         <div
-          className="fade-in flex flex-col sm:flex-row gap-6 justify-center"
+          className="fade-in flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
           style={{ animationDelay: "0.9s" }}
         >
           <Button
-            className="btn-hero text-xl py-6 px-12"
+            className="btn-hero text-base sm:text-xl py-4 sm:py-6 px-6 sm:px-12"
             size="lg"
             onClick={scrollToContact}
           >
@@ -69,7 +69,7 @@ const Hero = () => {
           <Button
             variant="outline"
             size="lg"
-            className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary-dark backdrop-blur-sm text-xl py-6 px-12 transition-all duration-500"
+            className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary-dark backdrop-blur-sm text-base sm:text-xl py-4 sm:py-6 px-6 sm:px-12 transition-all duration-500"
           >
             Hemen Ara: (0535) 470-3826
           </Button>
@@ -79,15 +79,15 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white transition-all duration-300 animate-bounce"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white transition-all duration-300 animate-bounce"
         aria-label="Aşağı kaydır"
       >
         <ArrowDown className="w-8 h-8" />
       </button>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="hidden sm:block absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
+      <div className="hidden sm:block absolute bottom-20 right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
     </section>
   );
 };
