@@ -3,8 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-export default defineConfig({
-  base: "/tesisathanem/", // <<< kesinlikle bu satır olmalı
+export default defineConfig(({ command }) => ({
+  // Dev preview Lovable içinde /tesisathanem/ altında çalışır, prod ise kök (/)
+  base: command === "serve" ? "/tesisathanem/" : "/",
   server: {
     port: 8080,
   },
@@ -14,4 +15,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));
