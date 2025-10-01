@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 import VideoShowcase from "@/components/VideoShowcase";
+import DecorationGallery from "@/components/DecorationGallery";
 
 const Index = () => {
   useEffect(() => {
@@ -41,6 +42,7 @@ const Index = () => {
       <About />
       <Services />
       <VideoShowcase />
+      <DecorationGallery />
       <JobList />
       <Contact />
       <Footer />
